@@ -186,6 +186,14 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 --     rounding    = 0,
 -- })
 
+hl.window_rule({
+    name = "open-damx-on-workspace9",
+    match = {
+        class = "^DivAcerManagerMax$",
+    },
+    workspace = "8 silent",
+})
+
 -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
 hl.config({
     dwindle = {
@@ -271,7 +279,7 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd(menu_cli))
 hl.bind("ALT + S", hl.dsp.exec_cmd(screenshot))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + SHIFT + J", hl.dsp.layout("togglesplit"))    -- dwindle only
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.layout("togglesplit"))    -- dwindle only
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + h",  hl.dsp.focus({ direction = "left" }))
@@ -290,10 +298,17 @@ end
 -- Custom configurations
 hl.bind("ALT + TAB", hl.dsp.focus({ workspace = "previous" }))
 
+--- Resizing
 hl.bind(mainMod .. " + CTRL + H", hl.dsp.window.resize({ x = -40, y = 0, relative=true}))
 hl.bind(mainMod .. " + CTRL + L", hl.dsp.window.resize({ x = 40,  y = 0, relative=true }))
 hl.bind(mainMod .. " + CTRL + K", hl.dsp.window.resize({ x = 0,   y = -40, relative=true }))
 hl.bind(mainMod .. " + CTRL + J", hl.dsp.window.resize({ x = 0,   y = 40, relative=true }))
+
+--- Moving
+hl.bind("SUPER + SHIFT + H", hl.dsp.window.move({ direction = "left" }))
+hl.bind("SUPER + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
+hl.bind("SUPER + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
+hl.bind("SUPER + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
 -- End of custom configurations
 
 -- Example special workspace (scratchpad)
