@@ -117,3 +117,4 @@ export VAGRANT_HOME=$HOME/.vagrant.d
 export EDITOR=vim
 export VISUAL=vim
 export SUDO_EDITOR=vim
+export PATH="$HOME/go/bin:$PATH"
