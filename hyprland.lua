@@ -54,7 +54,7 @@ local screenshot  = "flameshot gui"
 --
 hl.on("hyprland.start", function () 
   hl.exec_cmd(terminal)
-  hl.exec_cmd("waybar")
+  hl.exec_cmd("waybar & google-chrome-stable & gtk-launch obsidian")
   hl.exec_cmd("sudo mount /dev/nvme1n1p1 /mnt/games & sudo mount /dev/nvme0n1p4 /mnt/sat")
 end)
 
@@ -187,6 +187,22 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 --     border_size = 0,
 --     rounding    = 0,
 -- })
+
+hl.window_rule({
+    name = "googlec-chrome-on-workspace8",
+    match = {
+        class = "^google-chrome$",
+    },
+    workspace = "2 silent",
+})
+
+hl.window_rule({
+    name = "obsidian-on-workspace8",
+    match = {
+        class = "^Obsidian$",
+    },
+    workspace = "7 silent",
+})
 
 hl.window_rule({
     name = "open-damx-on-workspace9",
