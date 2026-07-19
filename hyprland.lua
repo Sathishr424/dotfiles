@@ -57,6 +57,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("waybar")
     hl.exec_cmd("google-chrome-stable")
     hl.exec_cmd("gtk-launch obsidian")
+    hl.exec_cmd([[sh -c "/opt/damx/gui/DivAcerManagerMax > /tmp/damx.log 2>&1"]])
 end)
 
 -------------------------------
