@@ -52,12 +52,12 @@ local screenshot  = "flameshot gui"
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this:
 --
-hl.on("hyprland.start", function () 
-  hl.exec_cmd(terminal)
-  hl.exec_cmd("waybar & google-chrome-stable & gtk-launch obsidian")
-  hl.exec_cmd("sudo mount /dev/nvme1n1p1 /mnt/games & sudo mount /dev/nvme0n1p4 /mnt/sat")
+hl.on("hyprland.start", function()
+    hl.exec_cmd(terminal)
+    hl.exec_cmd("waybar")
+    hl.exec_cmd("google-chrome-stable")
+    hl.exec_cmd("gtk-launch obsidian")
 end)
-
 
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
@@ -199,7 +199,7 @@ hl.window_rule({
 hl.window_rule({
     name = "obsidian-on-workspace8",
     match = {
-        class = "^Obsidian$",
+        class = "^obsidian$",
     },
     workspace = "7 silent",
 })
@@ -210,6 +210,7 @@ hl.window_rule({
         class = "^DivAcerManagerMax$",
     },
     workspace = "8 silent",
+    float = true,
 })
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
@@ -330,8 +331,8 @@ hl.bind("SUPER + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
 -- End of custom configurations
 
 -- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+-- hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
+-- hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + TAB", hl.dsp.focus({ workspace = "e+1" }))
