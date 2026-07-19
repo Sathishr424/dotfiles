@@ -2,9 +2,12 @@
 
 echo "Setting things up..."
 
-mkdir Backup
+sudo rm -rf ~/.tmux.conf
+sudo rm -rf ~/.vimrc
+sudo rm -rf ~/.zshrc
+sudo rm -rf ~/.config/hypr/hyprland.lua
 
-cp .tmux.conf ~/.tmux.conf
-cp .vimrc ~/.vimrc
-cp .zshrc ~/.tmux.conf
-
+sudo ln -s ~/Documents/dotfiles/.tmux.conf ~/.tmux.conf
+sudo ln -s ~/Documents/dotfiles/.vimrc ~/.vimrc
+sudo ln -s ~/Documents/dotfiles/.zshrc ~/.zshrc
+sudo ln -s ~/Documents/dotfiles/hyprland.lua ~/.config/hypr/hyprland.lua

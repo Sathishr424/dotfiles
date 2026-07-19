@@ -53,7 +53,9 @@ local screenshot  = "flameshot gui"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function () 
+  hl.exec_cmd(terminal)
   hl.exec_cmd("waybar")
+  hl.exec_cmd("sudo mount /dev/nvme1n1p1 /mnt/games & sudo mount /dev/nvme0n1p4 /mnt/sat")
 end)
 
 
