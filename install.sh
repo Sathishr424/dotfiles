@@ -19,4 +19,10 @@ ln -sf "$DOTFILES_DIR/.vimrc" ~/.vimrc
 ln -sf "$DOTFILES_DIR/.zshrc" ~/.zshrc
 ln -sf "$DOTFILES_DIR/hyprland.lua" ~/.config/hypr/hyprland.lua
 
-echo "Done!"
+# Link systemd user services
+mkdir -p ~/.config/systemd/user
+
+for service in "$DOTFILES_DIR"/DaemonServices/*; do
+    [ -f "$service" ] || continue
+    ln -sf "$service" ~/.config/systemd/user/
+done
