@@ -1,0 +1,13 @@
+[Unit]
+Description=LeetCode Companion Daemon
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/mnt/sat/Work/Personal/Projects/NvimLeetcodeDaemon
+ExecStart=/usr/bin/python /mnt/sat/Work/Personal/Projects/NvimLeetcodeDaemon/run.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=default.target

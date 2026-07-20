@@ -1,0 +1,14 @@
+[Unit]
+Description=Utilities APIs
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/mnt/sat/Work/Personal/Projects/BrowserImageDownloader/PythonDaemon
+ExecStart=/usr/bin/python -u /mnt/sat/Work/Personal/Projects/BrowserImageDownloader/PythonDaemon/helper_api.py
+
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=default.target
