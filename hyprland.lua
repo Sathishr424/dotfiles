@@ -301,6 +301,7 @@ hl.bind(main_mod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(main_mod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(main_mod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(main_mod .. " + SHIFT + R", hl.dsp.exec_cmd(menu_cli))
+hl.bind(main_mod .. " + SHIFT + W", hl.dsp.exec_cmd("~/.local/bin/reloadwaybar"))
 hl.bind("ALT + S", hl.dsp.exec_cmd(screenshot))
 hl.bind(main_mod .. " + P", hl.dsp.window.pseudo())
 hl.bind(main_mod .. " + SHIFT + P", hl.dsp.layout("togglesplit"))    -- dwindle only

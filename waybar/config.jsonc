@@ -5,11 +5,13 @@
     "sway/mode"
   ],
   "modules-center": [
-    "sway/window"
-  ],
-  "modules-right": [
+    "sway/window",
     "custom/cpu",
     "custom/gpu",
+    "custom/ram",
+  ],
+  "modules-right": [
+    "backlight",
     "pulseaudio",
     "network",
     "battery",
@@ -68,6 +70,16 @@
     "scroll-step": 1,
     "on-click": "pavucontrol"
   },
+  "hyprland/workspaces": {
+    "format": "{name}: {icon}",
+    "format-icons": {
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 10,
+    }
+  },
   "custom/cpu": {
     "exec": "~/.config/waybar/scripts/cpu.sh",
     "return-type": "json",
@@ -77,5 +89,21 @@
     "exec": "~/.config/waybar/scripts/gpu.sh",
     "return-type": "json",
     "interval": 1
+  },
+  "custom/ram": {
+    "exec": "~/.config/waybar/scripts/ram.sh",
+    "return-type": "json",
+    "interval": 1
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{percent}% {icon}",
+    "format-icons": [
+      "󰃞",
+      "󰃟",
+      "󰃠"
+    ],
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-"
   }
 }
