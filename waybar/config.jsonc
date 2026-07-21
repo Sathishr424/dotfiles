@@ -2,15 +2,16 @@
   "layer": "top",
   "modules-left": [
     "hyprland/workspaces",
-    "sway/mode"
+    "sway/mode",
+    "sway/window",
   ],
   "modules-center": [
-    "sway/window",
     "custom/cpu",
     "custom/gpu",
     "custom/ram",
   ],
   "modules-right": [
+    "custom/network_speed",
     "backlight",
     "pulseaudio",
     "network",
@@ -94,6 +95,11 @@
     "exec": "~/.config/waybar/scripts/ram.sh",
     "return-type": "json",
     "interval": 1
+  },
+  "custom/network_speed": {
+    "exec": "~/.config/waybar/scripts/network.sh",
+    "return-type": "json",
+    "interval": 0
   },
   "backlight": {
     "device": "intel_backlight",

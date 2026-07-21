@@ -81,7 +81,7 @@ tooltip label {
   margin: 2px 5px;
 }
 
-#network, #pulseaudio, #backlight {
+#network, #pulseaudio, #backlight, #custom-network_speed {
   padding: 0px 15px 0px 10px;
   background-color: #64727D;
   color: white;
