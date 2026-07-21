@@ -16,4 +16,4 @@ GPU_POWER=$(echo "$GPU_INFO" | awk -F', ' '{print $5}')
 
 GPU_FAN=$(sensors | awk '/fan2:/ {print $2; exit}')
 
-printf '{"text":"🔲 %s°C %s%% 𖣘 %s","tooltip":"CPU","class":"normal"}\n' "$CPU_TEMP" "$CPU_USAGE" "$CPU_FAN"
+printf '{"text":"🎮 %s°C | %s%% | %sW | 𖣘 %s","tooltip":"CPU","class":"process-status "}\n' "$GPU_TEMP" "$GPU_USAGE" "$GPU_POWER" "$GPU_FAN"

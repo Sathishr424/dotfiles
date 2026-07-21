@@ -36,17 +36,6 @@ tooltip label {
     padding: 0 10px;
 }
 
-#network, #pulseaudio {
-  padding: 0px 15px 0px 10px;
-  background-color: #64727D;
-  color: white;
-  /* border-radius: 6px; */
-  margin-right: 10px;
-}
-
-.audio-icon {
-  font-size: 49px;
-}
 
 #mode {
     background: #64727D;
@@ -82,4 +71,20 @@ tooltip label {
     animation-timing-function: steps(12);
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#custom-cpu, #custom-gpu {
+  padding: 0px 15px 0px 10px;
+  background-color: #64727D;
+  color: white;
+  border-radius: 6px;
+  margin: 2px 5px;
+}
+
+#network, #pulseaudio {
+  padding: 0px 15px 0px 10px;
+  background-color: #64727D;
+  color: white;
+  /* border-radius: 6px; */
+  margin-right: 10px;
 }
