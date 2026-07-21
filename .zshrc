@@ -118,3 +118,4 @@ export EDITOR=vim
 export VISUAL=vim
 export SUDO_EDITOR=vim
 export PATH="$HOME/go/bin:$PATH"
+export XDG_MENU_PREFIX=arch-
