@@ -26,3 +26,5 @@ for service in "$DOTFILES_DIR"/DaemonServices/*; do
     [ -f "$service" ] || continue
     ln -sf "$service" ~/.config/systemd/user/
 done
+
+cp -r "$DOTFILES_DIR/assets" ~/.config/assets
