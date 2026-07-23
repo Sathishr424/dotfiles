@@ -61,6 +61,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("gtk-launch obsidian")
     hl.exec_cmd([[sh -c "/opt/damx/gui/DivAcerManagerMax > /tmp/damx.log 2>&1"]])
     hl.exec_cmd([[systemctl --user restart xdg-desktop-portal{,-hyprland}]])
+    hl.exec_cmd([[awww img /mnt/sat/Downloads/Images/Desert/wp14828071.webp]])
     -- hl.exec_cmd([[mpvpaper -f -o "no-audio hwdec=auto loop-file=inf panscan=1" '*' /mnt/sat/Wallpapers/Live/flower-shop-beachside-moewalls-com.mp4]])
 end)
 
