@@ -38,6 +38,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal    = "ghostty"
 local fileManager = "dolphin"
+local browser = "google-chrome-stable"
 local menu        = "rofi -show drun"
 local menu_cli        = "rofi -show run"
 local screenshot  = "flameshot gui"
@@ -61,7 +62,8 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("gtk-launch obsidian")
     hl.exec_cmd([[sh -c "/opt/damx/gui/DivAcerManagerMax > /tmp/damx.log 2>&1"]])
     hl.exec_cmd([[systemctl --user restart xdg-desktop-portal{,-hyprland}]])
-    hl.exec_cmd([[awww img /mnt/sat/Downloads/Images/Desert/wp14828071.webp]])
+    -- hl.exec_cmd([[awww img /mnt/sat/Downloads/Images/Desert/wp14828071.webp]])
+    hl.exec_cmd([[awww img "/mnt/sat/Downloads/Images/Loid Forger/O2gT7Q.jpg"]])
     -- hl.exec_cmd([[mpvpaper -f -o "no-audio hwdec=auto loop-file=inf panscan=1" '*' /mnt/sat/Wallpapers/Live/flower-shop-beachside-moewalls-com.mp4]])
 end)
 
@@ -102,7 +104,7 @@ hl.env("XDG_MENU_PREFIX", "arch-")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
     general = {
-        gaps_in  = 5,
+        gaps_in  = 1,
         gaps_out = 5,
 
         border_size = 1,
@@ -262,7 +264,7 @@ hl.config({
         kb_layout  = "us",
         kb_variant = "",
         kb_model   = "",
-        kb_options = "caps:swapescape",
+        kb_options = "caps:escape",
         kb_rules   = "",
 
         follow_mouse = 0,
@@ -300,6 +302,7 @@ hl.bind(main_mod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(main_mod .. " + Q", hl.dsp.window.close())
 hl.bind(main_mod .. " + SHIFT + Q", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(main_mod .. " + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(main_mod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(main_mod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(main_mod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(main_mod .. " + SHIFT + R", hl.dsp.exec_cmd(menu_cli))

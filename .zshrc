@@ -102,7 +102,7 @@ alias ls="${aliases[ls]:-ls} -A"
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
-export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 
 export ANDROID_HOME=$HOME/Android/Sdk
@@ -119,3 +119,7 @@ export VISUAL=vim
 export SUDO_EDITOR=vim
 export PATH="$HOME/go/bin:$PATH"
 export XDG_MENU_PREFIX=arch-
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
