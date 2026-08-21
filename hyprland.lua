@@ -42,6 +42,7 @@ local browser = "google-chrome-stable"
 local menu        = "rofi -show drun"
 local menu_cli        = "rofi -show run"
 local screenshot  = "flameshot gui"
+local todo = "superproductivity"
 
 
 -------------------
@@ -58,7 +59,8 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("awww-daemon")
     hl.exec_cmd("awww restore")
     hl.exec_cmd("waybar")
-    hl.exec_cmd("google-chrome-stable")
+    hl.exec_cmd(browser)
+    hl.exec_cmd(todo)
     hl.exec_cmd("gtk-launch obsidian")
     hl.exec_cmd([[sh -c "/opt/damx/gui/DivAcerManagerMax > /tmp/damx.log 2>&1"]])
     hl.exec_cmd([[systemctl --user restart xdg-desktop-portal{,-hyprland}]])
@@ -198,7 +200,7 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 -- })
 
 hl.window_rule({
-    name = "googlec-chrome-on-workspace8",
+    name = "googlec-chrome-on-workspace2",
     match = {
         class = "^google-chrome$",
     },
@@ -206,7 +208,15 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name = "obsidian-on-workspace8",
+    name = "todo-workspace6",
+    match = {
+        class = "^superproductivity-bin$",
+    },
+    workspace = "6 silent",
+})
+
+hl.window_rule({
+    name = "obsidian-on-workspace7",
     match = {
         class = "^obsidian$",
     },
@@ -214,7 +224,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name = "open-damx-on-workspace9",
+    name = "open-damx-on-workspace8",
     match = {
         class = "^DivAcerManagerMax$",
     },
