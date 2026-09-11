@@ -60,7 +60,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("awww restore")
     hl.exec_cmd("waybar")
     hl.exec_cmd(browser)
-    hl.exec_cmd(todo)
+    -- hl.exec_cmd(todo)
     hl.exec_cmd("gtk-launch obsidian")
     hl.exec_cmd([[sh -c "/opt/damx/gui/DivAcerManagerMax > /tmp/damx.log 2>&1"]])
     hl.exec_cmd([[systemctl --user restart xdg-desktop-portal{,-hyprland}]])
@@ -207,13 +207,13 @@ hl.window_rule({
     workspace = "2 silent",
 })
 
-hl.window_rule({
-    name = "todo-workspace6",
-    match = {
-        class = "^superproductivity-bin$",
-    },
-    workspace = "6 silent",
-})
+-- hl.window_rule({
+--     name = "todo-workspace6",
+--     match = {
+--         class = "^superproductivity-bin$",
+--     },
+--     workspace = "6 silent",
+-- })
 
 hl.window_rule({
     name = "obsidian-on-workspace7",

@@ -3,11 +3,9 @@
 " =========================
 syntax on
 set termguicolors
-colorscheme catppuccin_mocha
 
 set number              " Show line numbers
 set relativenumber      " Relative line numbers
-set cursorline          " Highlight current line
 set showmatch           " Highlight matching brackets
 set scrolloff=8         " Keep 8 lines above/below cursor
 set sidescrolloff=8
