@@ -43,6 +43,7 @@ local menu        = "rofi -show drun"
 local menu_cli        = "rofi -show run"
 local screenshot  = "flameshot gui"
 local todo = "superproductivity"
+local color_picker = "hyprpicker | wl-copy"
 
 
 -------------------
@@ -59,7 +60,9 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("awww-daemon")
     hl.exec_cmd("awww restore")
     hl.exec_cmd("waybar")
+    hl.exec_cmd("hyprctl keyword windowrule 'workspace 2, match:class google-chrome'")
     hl.exec_cmd(browser)
+    hl.exec_cmd("sleep 2; hyprctl keyword windowrule unset, match:class google-chrome")
     -- hl.exec_cmd(todo)
     hl.exec_cmd("gtk-launch obsidian")
     hl.exec_cmd([[sh -c "/opt/damx/gui/DivAcerManagerMax > /tmp/damx.log 2>&1"]])
@@ -199,13 +202,13 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 --     rounding    = 0,
 -- })
 
-hl.window_rule({
-    name = "googlec-chrome-on-workspace2",
-    match = {
-        class = "^google-chrome$",
-    },
-    workspace = "2 silent",
-})
+-- hl.window_rule({
+--     name = "googlec-chrome-on-workspace2",
+--     match = {
+--         class = "^google-chrome$",
+--     },
+--     workspace = "2 silent",
+-- })
 
 -- hl.window_rule({
 --     name = "todo-workspace6",
@@ -313,6 +316,7 @@ hl.bind(main_mod .. " + Q", hl.dsp.window.close())
 hl.bind(main_mod .. " + SHIFT + Q", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(main_mod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(main_mod .. " + B", hl.dsp.exec_cmd(browser))
+hl.bind(main_mod .. " + C", hl.dsp.exec_cmd(color_picker))
 hl.bind(main_mod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(main_mod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(main_mod .. " + SHIFT + R", hl.dsp.exec_cmd(menu_cli))
