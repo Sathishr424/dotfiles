@@ -125,3 +125,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 export DOWNLOAD="/mnt/sat/Downloads/Arch/"
+
+# opencode
+export PATH=/home/sathish/.opencode/bin:$PATH

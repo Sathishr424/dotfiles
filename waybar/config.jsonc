@@ -3,11 +3,11 @@
   "modules-left": [
     "hyprland/workspaces",
     "sway/mode",
-    "sway/window"
+    "sway/window",
+    "custom/cpu",
+    "custom/gpu"
   ],
   "modules-center": [
-    "custom/cpu",
-    "custom/gpu",
     "custom/ram"
   ],
   "modules-right": [
