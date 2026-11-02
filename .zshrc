@@ -128,3 +128,24 @@ export DOWNLOAD="/mnt/sat/Downloads/Arch/"
 
 # opencode
 export PATH=/home/sathish/.opencode/bin:$PATH
+
+export EDITOR=nvim
+export VISUAL=nvim
+export UV_CACHE_DIR="/mnt/games/uv-cache"
+export PYTHON_ENV="/mnt/games/Projects/python-env/bin/python"
+
+alias uvshared_run='uv run --python "$PYTHON_ENV"'
+alias uvshared_add='uv pip install --python "$PYTHON_ENV"'
+
+python_shared() {
+  "$PYTHON_ENV" "$@"
+}
+
+# Hugging Face model and dataset cache
+export HF_HOME="/mnt/games/huggingface"
+
+# Explicit model cache directory
+export HF_HUB_CACHE="$HF_HOME/hub"
+
+# Datasets cache
+export HF_DATASETS_CACHE="$HF_HOME/datasets"

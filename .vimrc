@@ -2,7 +2,6 @@
 " Appearance
 " =========================
 syntax on
-set termguicolors
 
 set number              " Show line numbers
 set relativenumber      " Relative line numbers
@@ -27,9 +26,6 @@ set ignorecase          " Ignore case
 set smartcase           " Unless uppercase is used
 set incsearch           " Incremental search
 set hlsearch            " Highlight matches
-
-" Press <leader><space> to clear highlights
-nnoremap <leader><space> :nohlsearch<CR>
 
 " =========================
 " Splits
